@@ -11,9 +11,9 @@ with open("data.txt", "r") as inputFile:
   inputFile.close();
 
 
-print(data["features"][1]["geometry"]["coordinates"])
-coords = data["features"][1]["geometry"]["coordinates"]
+print(data["features"][1]["geometry"]["coordinates"][0])
+coords = data["features"][1]["geometry"]["coordinates"][0]
 
-poly = geometry.Polygon([(0, 0), (0, 1), (1, 1), (1, 0)])
+poly = geometry.Polygon(coords)
 mesh = trimesh.creation.extrude_polygon(poly, 1)
 trimesh.exchange.export.export_mesh(mesh, "mesh.stl")
