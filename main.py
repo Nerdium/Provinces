@@ -17,7 +17,7 @@ print(data["features"][0])
 for i in range(len(data["features"])):
   print(i)
   if(data["features"][i]["geometry"]["type"] == "Polygon"):
-    coords = data["features"][1]["geometry"]["coordinates"][0]
+    coords = data["features"][i]["geometry"]["coordinates"][0]
     poly = geometry.Polygon(coords)
     mesh = trimesh.creation.extrude_polygon(poly, 1)
     trimesh.exchange.export.export_mesh(mesh, "meshes/mesh" + str(i) + ".stl")
