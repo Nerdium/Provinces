@@ -20,7 +20,7 @@ for i in range(len(data["features"])):
     coords = data["features"][i]["geometry"]["coordinates"][0]
     poly = geometry.Polygon(coords)
     mesh = trimesh.creation.extrude_polygon(poly, 1)
-    trimesh.exchange.export.export_mesh(mesh, "meshes/mesh" + str(i) + ".obj")
+    trimesh.exchange.export.export_mesh(mesh, "objs/mesh" + str(i) + ".obj")
 
 #poly = geometry.Polygon(coords)
 #mesh = trimesh.creation.extrude_polygon(poly, 1)
